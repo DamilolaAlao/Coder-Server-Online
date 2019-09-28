@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  code-server:
+    image: codercom/code-server
+    volumes:
+      - ~/projects:/root/project
+    ports:
+      - 8443:8443
+    command: "--allow-http"
