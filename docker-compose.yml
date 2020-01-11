@@ -1,10 +1,12 @@
-version: "2"
+version: "3"
 
 services:
   code-server:
+    container_name: code-server
     image: codercom/code-server
-    volumes:
-      - ~/projects:/root/project
     ports:
-      - 8443:8443
-    command: "--allow-http"
+      - "8080:8080"
+    volumes:
+      - "${PWD}:/home/coder/project"
+    environment:
+      PASSWORD: "password"
